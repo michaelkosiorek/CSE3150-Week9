@@ -10,13 +10,13 @@ std::ostream& operator<<(std::ostream& os, const Point3d& point3d) {
 }
 
 std::ostream& operator<<(std::ostream& os, const Triangle& triangle) {
-    os << triangle.get_p1() << endl << triangle.get_p2() << endl << triangle.get_p3();
+    os << "P1: " << triangle.get_p1() << endl << "P2: " << triangle.get_p2() << endl << "P3: " << triangle.get_p3();
     return os;
 }
 
 double truncate_double(double value, int decimal_places) {
     double factor = pow(10.0, decimal_places);
-    double truncated = std::floor(value * factor) / factor;
+    double truncated = std::round(value * factor) / factor;
     return truncated;
 }
 

@@ -14,7 +14,7 @@ struct Point3d {
         double y;
         double z;
     public:
-        Point3d(){};
+        Point3d(): x(0), y(0), z(0) {};
         Point3d(const Point3d & p3d) : x(p3d.get_x()), y(p3d.get_y()), z(p3d.get_z()) {};
         Point3d(double x, double y, double z) : x(x), y(y), z(z) {};
         ~Point3d(){};
@@ -24,9 +24,9 @@ struct Point3d {
         double get_y() const {return y;}
         double get_z() const {return z;}
         //setters
-        void set_x(double& new_x) {x = new_x;};
-        void set_y(double& new_y) {y = new_y;};
-        void set_z(double& new_z) {z = new_z;};
+        void set_x(double new_x) {x = new_x;};
+        void set_y(double new_y) {y = new_y;};
+        void set_z(double new_z) {z = new_z;};
 };
 
 struct Triangle {
@@ -69,13 +69,11 @@ struct Triangle {
 
         void recompute() {initialize_triangle_info();};
         /*
-        setters/
-        you cannot set anything but the points because the info would no longer be true.
-
-        NOTE FOR SETTERS:
-            all setters recall the initalization of triangle info,
-            because everything like the distances, semi-perimeter, area, etc. MUST
-            be updated if even one point is changed.
+        setters:
+            - you cannot set anything but the points because the info would no longer be true.
+            - all setters recall the initalization of triangle info,
+              because everything like the distances, semi-perimeter, area, etc. MUST
+              be updated if even one point is changed.
         */
         void set_p1(Point3d& new_point) {
             p1 = new_point;

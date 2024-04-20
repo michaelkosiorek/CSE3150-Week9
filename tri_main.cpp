@@ -3,14 +3,20 @@
 
 int main() {
 
-    
+    double x, y, z;
+    cout << "Enter p1 coordinates separated by spaces:" << endl;
+    cin >> x >> y >> z; 
+    Point3d point3d_1(x, y, z);
+    cout << "Entered: (" << x << ", " << y << ", " << z << ")" << endl;
+    cout << "Enter p2 coordinates separated by spaces:" << endl;
+    cin >> x >> y >> z; 
+    Point3d point3d_2(x, y, z);
+    cout << "Entered: (" << x << ", " << y << ", " << z << ")" << endl;
+    cout << "Enter p3 coordinates separated by spaces:" << endl;
+    cin >> x >> y >> z; 
+    Point3d point3d_3(x, y, z);
+    cout << "Entered: (" << x << ", " << y << ", " << z << ")" << endl;
 
-    Point3d point3d_1 = {10.32321, 1.3232, .3};
-    Point3d point3d_2 = {11.32321, 3.3232, 3.3};
-    Point3d point3d_3 = {0.32321, 4.3232, 10.3};
-
-    cout << point3d_1 << endl;
-    cout << endl;
     Triangle triangle(point3d_1, point3d_2, point3d_3);
     cout << triangle << endl;
 
